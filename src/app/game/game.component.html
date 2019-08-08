@@ -1,0 +1,20 @@
+<div class="game">
+  <div class="start_block">
+    <button class="btn_start" (click)="startGame();" *ngIf="buttonView">start</button>
+    <button class="btn_restart" (click)="restartGame();" *ngIf="!buttonView">restart</button>
+  </div>
+  <div class="timer">Time to choose a variant {{timeLeft}}</div>
+  <div class="card_block">
+    <div class="card_player">
+      <button *ngFor="let item of choiceWeapon" (click)="player(item.name)">
+        <img [src]="item.path" alt="">
+      </button>
+    </div>
+    <div class="card_comp">
+      <div>
+        <img [src]="choiceComp.path" alt="">
+      </div>
+    </div>
+  </div>
+  {{result}}
+</div>
